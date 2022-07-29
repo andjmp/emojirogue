@@ -28,10 +28,7 @@ function drawMap() {
       if (treasure[row][t]) {
         tiles[row].push("💰"); 
       } else {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-          tiles[row].push("◼️");
-        else
-          tiles[row].push("◻️");
+        tiles[row].push("◻️");
       }
     }
   }
