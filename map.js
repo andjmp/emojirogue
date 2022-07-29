@@ -1,6 +1,6 @@
 var tiles = [];
 var treasure = [];
-let width = 10, height = 10;
+let width = 11, height = 11;
 let time = 0, score = 0;
 
 var player = {
