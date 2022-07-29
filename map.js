@@ -1,6 +1,6 @@
 var tiles = [];
 var treasure = [];
-let width = 25, height = 25;
+let width = 10, height = 10;
 let time = 0, score = 0;
 
 var player = {
@@ -70,19 +70,43 @@ document.addEventListener('keydown', function (event) {
 
 function move(direction) {
   switch (direction) {
-    case "down":
-      if (player.y < height - 1)
-        player.y += 1;
+    case "up-left":
+      if (player.y > 0)
+        player.y -= 1;
+      if (player.x > 0)
+        player.x -= 1;
       break;
     case "up":
       if (player.y > 0)
         player.y -= 1;
+      break;
+    case "up-right":
+      if (player.y > 0)
+        player.y -= 1;
+      if (player.x < width - 1)
+        player.x += 1;
       break;
     case "left":
       if (player.x > 0)
         player.x -= 1;
       break;
     case "right":
+      if (player.x < width - 1)
+        player.x += 1;
+      break;
+    case "down-left":
+      if (player.y < height - 1)
+        player.y += 1;
+      if (player.x > 0)
+        player.x -= 1;
+      break;
+    case "down":
+      if (player.y < height - 1)
+        player.y += 1;
+      break;
+    case "down-right":
+      if (player.y < height - 1)
+        player.y += 1;
       if (player.x < width - 1)
         player.x += 1;
       break;
