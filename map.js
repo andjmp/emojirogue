@@ -25,10 +25,14 @@ function drawMap() {
   for (let row = 0; row < height; row += 1) {
     tiles[row] = new Array;
     for (let t = 0; t < width; t += 1) {
-      if (treasure[row][t])
+      if (treasure[row][t]) {
         tiles[row].push("💰"); 
-      else
-        tiles[row].push("◻️");
+      } else {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          tiles[row].push("◼️");
+        else
+          tiles[row].push("◻️");
+      }
     }
   }
 
