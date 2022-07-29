@@ -3,11 +3,11 @@
   <head>
     <style>
       body {
-        /* display: flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        border: solid 2px; */
+        border: solid 2px;
       }
       #map {
         border: solid 2px red;
@@ -23,13 +23,15 @@
         padding: 1em;
       }
       #controls {
-        /* display: inline; */
+        display: grid;
+        grid-template-columns: auto auto auto;
         border: solid 2px blue;
         text-align: center;
       }
       button {
+        touch-action: manipulation;
         font-size: min(20vw,10vh);
-        border: 0;
+        border: 1px solid blue;
         background: none;
         line-height: 1.2em;
       }
@@ -40,19 +42,23 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="map">
+
+    </div>
     <div id="stats">
       <div id="time">time: 0</div>
       <div id="score">score: 0</div>
     </div>
     <div id="controls">
+      <button onclick="move('up-left')">↖️</button>
       <button onclick="move('up')">⬆️</button>
-      <br>
+      <button onclick="move('up-right')">↗️</button>
       <button onclick="move('left')">⬅️</button>
       <button onclick="move()">🆗</button>
       <button onclick="move('right')">➡️</button>
-      <br>
+      <button onclick="move('down-left')">↙️</button>
       <button onclick="move('down')">⬇️</button>
+      <button onclick="move('down-right')">↘️</button>
     </div>
     <script src="map.js"></script>
   </body>
