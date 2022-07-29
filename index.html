@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: solid 2px;
+      }
+      #map {
+        border: solid 2px red;
+        text-align: center;
+        line-height: 1em;
+        font-size: min(3.5vw,2vh);
+      }
+      #stats {
+        border: solid 2px green;
+        display: inline-flex;
+      }
+      #stats * {
+        padding: 1em;
+      }
+      #controls {
+        border: solid 2px blue;
+        text-align: center;
+      }
+      button {
+        font-size: min(20vw,10vh);
+        border: 0;
+        background: none;
+        line-height: 1.2em;
+      }
+      button:active {
+        transition: all .1s;
+        transform: scale(0.90);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="stats">
+      <div id="time">time: 0</div>
+      <div id="score">score: 0</div>
+    </div>
+    <div id="controls">
+      <button onclick="move('up')">⬆️</button>
+      <br>
+      <button onclick="move('left')">⬅️</button>
+      <button onclick="move()">🆗</button>
+      <button onclick="move('right')">➡️</button>
+      <br>
+      <button onclick="move('down')">⬇️</button>
+    </div>
+    <script src="map.js"></script>
+  </body>
+  
+</html>
+
